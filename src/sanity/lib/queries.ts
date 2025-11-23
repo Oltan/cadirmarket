@@ -1,0 +1,23 @@
+import { defineQuery } from "next-sanity";
+
+export const PRODUCTS_QUERY = defineQuery(`*[_type == "product"]{
+  _id,
+  name,
+  slug,
+  price,
+  stock,
+  description,
+  "imageUrl": images[0].asset->url,
+  "category": category->title
+}`);
+
+export const PRODUCT_QUERY = defineQuery(`*[_type == "product" && slug.current == $slug][0]{
+  _id,
+  name,
+  slug,
+  price,
+  stock,
+  description,
+  "images": images[].asset->url,
+  "category": category->title
+}`);
