@@ -6,15 +6,15 @@ export default function Footer() {
                     <div>
                         <h3 className="text-lg font-bold mb-4">ÇadırMarket</h3>
                         <p className="text-sm text-zinc-500">
-                            Doğayı keşfetmek için ihtiyacınız olan her şey burada.
+                            Branda, çadır ve koruma sistemlerinde profesyonel çözümler.
                         </p>
                     </div>
                     <div>
                         <h4 className="font-semibold mb-4">Kategoriler</h4>
                         <ul className="space-y-2 text-sm text-zinc-500">
                             <li>Çadırlar</li>
-                            <li>Uyku Tulumları</li>
-                            <li>Kamp Mutfağı</li>
+                            <li>Branda Çeşitleri</li>
+                            <li>Kapsül & Aksesuar</li>
                         </ul>
                     </div>
                     <div>

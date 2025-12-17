@@ -22,7 +22,7 @@ export default function ContactPage() {
                             <div>
                                 <h3 className="font-medium text-lg">Adres</h3>
                                 <p className="text-zinc-600 dark:text-zinc-400">
-                                    Doğa Mahallesi, Kampçılar Caddesi No: 12<br />
+                                    Sanayi Mahallesi, Branda Sokak No: 12<br />
                                     Kadıköy / İstanbul
                                 </p>
                             </div>

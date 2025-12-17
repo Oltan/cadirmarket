@@ -18,10 +18,10 @@ export default function Hero() {
             {/* İçerik */}
             <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                    Doğayı Eviniz Yapın
+                    Her Mevsim Güvendesiniz
                 </h1>
                 <p className="text-xl md:text-2xl mb-8 text-gray-200">
-                    En kaliteli çadırlar ve kamp ekipmanları ile maceraya hazır olun.
+                    Dayanıklı brandalar, profesyonel çadır sistemleri ve kapsül aksesuarlar ile çözümler sunuyoruz.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link

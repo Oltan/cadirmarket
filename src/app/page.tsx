@@ -48,19 +48,19 @@ export default async function Home() {
           <h2 className="text-3xl font-bold mb-6">Neden ÇadırMarket?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="p-6 bg-white dark:bg-black rounded-xl shadow-sm">
-              <div className="text-4xl mb-4">🏕️</div>
-              <h3 className="text-xl font-semibold mb-2">Kaliteli Ekipman</h3>
-              <p className="text-zinc-500">En zorlu doğa koşullarına dayanıklı, test edilmiş ürünler.</p>
+              <div className="text-4xl mb-4">🛡️</div>
+              <h3 className="text-xl font-semibold mb-2">Yüksek Dayanıklılık</h3>
+              <p className="text-zinc-500">Endüstriyel standartlarda, her türlü hava koşuluna dayanıklı malzeme.</p>
             </div>
             <div className="p-6 bg-white dark:bg-black rounded-xl shadow-sm">
               <div className="text-4xl mb-4">🚚</div>
-              <h3 className="text-xl font-semibold mb-2">Hızlı Teslimat</h3>
-              <p className="text-zinc-500">Siparişleriniz aynı gün kargoda, maceranız beklemesin.</p>
+              <h3 className="text-xl font-semibold mb-2">Hızlı & Güvenli Kargo</h3>
+              <p className="text-zinc-500">Siparişleriniz özenle paketlenir ve en kısa sürede adresinize ulaştırılır.</p>
             </div>
             <div className="p-6 bg-white dark:bg-black rounded-xl shadow-sm">
-              <div className="text-4xl mb-4">🛡️</div>
-              <h3 className="text-xl font-semibold mb-2">Güvenli Alışveriş</h3>
-              <p className="text-zinc-500">Müşteri memnuniyeti odaklı hizmet anlayışı.</p>
+              <div className="text-4xl mb-4">📏</div>
+              <h3 className="text-xl font-semibold mb-2">Özel Çözümler</h3>
+              <p className="text-zinc-500">İhtiyacınıza özel ölçülerde branda ve çadır sistemleri.</p>
             </div>
           </div>
         </div>

@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Çadır Market | Doğayı Keşfet",
-  description: "En kaliteli kamp malzemeleri ve çadırlar.",
+  title: "Çadır Market | Branda, Çadır ve Kapsül Çözümleri",
+  description: "En kaliteli çadır, branda, şeffaf kaplama ve kapsül sistemleri.",
 };
 
 export default function RootLayout({
