@@ -21,3 +21,9 @@ export const PRODUCT_QUERY = defineQuery(`*[_type == "product" && slug.current =
   "images": images[].asset->url,
   "category": category->title
 }`);
+
+export const CATEGORIES_QUERY = defineQuery(`*[_type == "category"]{
+  _id,
+  title,
+  slug
+}`);
