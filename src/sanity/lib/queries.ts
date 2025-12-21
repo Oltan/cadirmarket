@@ -27,3 +27,15 @@ export const CATEGORIES_QUERY = defineQuery(`*[_type == "category"]{
   title,
   slug
 }`);
+
+export const PRODUCTS_BY_CATEGORY_QUERY = defineQuery(`*[_type == "product" && category->slug.current == $categorySlug]{
+  _id,
+  name,
+  slug,
+  price,
+  stock,
+  description,
+  "imageUrl": images[0].asset->url,
+  "category": category->title
+}`);
+

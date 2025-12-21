@@ -6,7 +6,15 @@ import { PRODUCTS_QUERY } from "@/sanity/lib/queries";
 export const revalidate = 10; // Revalidate every 10 seconds
 
 export default async function Home() {
-  const products = await client.fetch(PRODUCTS_QUERY);
+  let products = [];
+
+  try {
+    products = await client.fetch(PRODUCTS_QUERY);
+  } catch (error) {
+    console.error("Sanity bağlantı hatası:", error);
+    // Continue with empty products array
+  }
+
 
   return (
     <div className="flex flex-col min-h-screen">
