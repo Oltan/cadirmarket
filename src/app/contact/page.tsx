@@ -22,8 +22,8 @@ export default function ContactPage() {
                             <div>
                                 <h3 className="font-medium text-lg">Adres</h3>
                                 <p className="text-zinc-600 dark:text-zinc-400">
-                                    Sanayi Mahallesi, Branda Sokak No: 12<br />
-                                    Kadıköy / İstanbul
+                                    Ayyıldız Sanayi, Ostim, 1169. Sk. No: 24 Sitesi 1125<br />
+                                    06374 Yenimahalle/Ankara
                                 </p>
                             </div>
                         </div>
@@ -34,9 +34,18 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="font-medium text-lg">Telefon</h3>
-                                <p className="text-zinc-600 dark:text-zinc-400">
-                                    +90 (212) 123 45 67
-                                </p>
+                                <a href="tel:05322183061" className="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors">
+                                    0532 218 30 61
+                                </a>
+                                <br />
+                                <a
+                                    href="https://wa.me/905322183061"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm text-green-600 hover:text-green-700 transition-colors"
+                                >
+                                    WhatsApp ile iletişime geç
+                                </a>
                             </div>
                         </div>
 
