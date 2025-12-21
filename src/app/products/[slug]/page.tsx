@@ -3,6 +3,36 @@ import { PRODUCT_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Metadata, ResolvingMetadata } from "next";
+
+export async function generateMetadata(
+    { params }: { params: Promise<{ slug: string }> },
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const { slug } = await params;
+    const product = await client.fetch(PRODUCT_QUERY, { slug });
+
+    if (!product) {
+        return {
+            title: "Ürün Bulunamadı | Çadır Market",
+        };
+    }
+
+    const previousImages = (await parent).openGraph?.images || [];
+
+    return {
+        title: product.name,
+        description: product.description?.slice(0, 160) || `${product.name} ve diğer çadır/branda ürünleri için Çadır Market'i ziyaret edin.`,
+        openGraph: {
+            title: product.name,
+            description: product.description?.slice(0, 160),
+            images: [
+                product.images?.[0] || "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4",
+                ...previousImages,
+            ],
+        },
+    };
+}
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
@@ -52,13 +82,21 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                             </span>
                         </div>
 
-                        <a
-                            href={`https://wa.me/905555555555?text=Merhaba, ${product.name} hakkında bilgi almak istiyorum.`}
-                            target="_blank"
-                            className="block w-full bg-green-600 hover:bg-green-700 text-white text-center font-bold py-4 rounded-xl transition-colors"
-                        >
-                            WhatsApp ile Bilgi Al
-                        </a>
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                            <a
+                                href={`https://wa.me/905322183061?text=Merhaba, ${product.name} hakkında bilgi almak istiyorum.`}
+                                target="_blank"
+                                className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl transition-colors"
+                            >
+                                <span>WhatsApp</span>
+                            </a>
+                            <a
+                                href="tel:05322183061"
+                                className="flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-zinc-200 text-white dark:text-black font-bold py-4 rounded-xl transition-colors"
+                            >
+                                <span>0532 218 30 61</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
