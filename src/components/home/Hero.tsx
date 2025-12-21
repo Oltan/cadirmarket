@@ -7,7 +7,7 @@ export default function Hero() {
             {/* Arkaplan Görseli */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=2070&auto=format&fit=crop"
+                    src="/images/2025-09-16.jpg"
                     alt="Kamp yapan insanlar"
                     fill
                     className="object-cover brightness-50"

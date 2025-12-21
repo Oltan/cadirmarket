@@ -37,7 +37,7 @@ export default async function Home() {
                   id={product.slug?.current} // Using slug as ID for routing
                   name={product.name}
                   price={product.price}
-                  image={product.imageUrl || "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=2070&auto=format&fit=crop"}
+                  image={product.imageUrl || "/images/2025-09-16.jpg"}
                   category={product.category || "Genel"}
                 />
               ))

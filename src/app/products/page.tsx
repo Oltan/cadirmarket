@@ -37,8 +37,8 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                 <Link
                     href="/products"
                     className={`px-5 py-2.5 rounded-full font-medium transition-all ${!selectedCategory
-                            ? "bg-green-600 text-white shadow-lg"
-                            : "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
+                        ? "bg-green-600 text-white shadow-lg"
+                        : "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
                         }`}
                 >
                     Tümü
@@ -48,8 +48,8 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                         key={cat._id}
                         href={`/products?category=${cat.slug?.current}`}
                         className={`px-5 py-2.5 rounded-full font-medium transition-all ${selectedCategory === cat.slug?.current
-                                ? "bg-green-600 text-white shadow-lg"
-                                : "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
+                            ? "bg-green-600 text-white shadow-lg"
+                            : "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
                             }`}
                     >
                         {cat.title}
@@ -66,7 +66,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                             id={product.slug?.current}
                             name={product.name}
                             price={product.price}
-                            image={product.imageUrl || "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=2070&auto=format&fit=crop"}
+                            image={product.imageUrl || "/images/2025-09-16.jpg"}
                             category={product.category || "Genel"}
                         />
                     ))
