@@ -27,7 +27,7 @@ export async function generateMetadata(
             title: product.name,
             description: product.description?.slice(0, 160),
             images: [
-                product.images?.[0] || "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4",
+                product.images?.[0] || "/images/2025-09-16.jpg",
                 ...previousImages,
             ],
         },
@@ -52,7 +52,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 {/* Görsel Alanı */}
                 <div className="relative h-[400px] md:h-[600px] bg-zinc-100 dark:bg-zinc-800 rounded-2xl overflow-hidden">
                     <Image
-                        src={product.images?.[0] || "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=2070&auto=format&fit=crop"}
+                        src={product.images?.[0] || "/images/2025-09-16.jpg"}
                         alt={product.name}
                         fill
                         className="object-cover"
