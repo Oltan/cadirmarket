@@ -89,7 +89,7 @@ export default function PrivacyPage() {
                         </p>
                         <div className="bg-zinc-100 dark:bg-zinc-800 p-4 rounded-lg">
                             <p className="text-zinc-600 dark:text-zinc-400">
-                                <strong>Adres:</strong> Ayyıldız Sanayi, Ostim, 1169. Sk. No: 24 Sitesi 1125, 06374 Yenimahalle/Ankara<br />
+                                <strong>Adres:</strong> Ostim, Ayyıldız Sanayi Sitesi, 1125/1 Sk. No: 24 06374 Yenimahalle/Ankara<br />
                                 <strong>Telefon:</strong> 0532 218 30 61<br />
                                 <strong>E-posta:</strong> info@cadirmarket.com
                             </p>

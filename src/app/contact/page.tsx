@@ -60,7 +60,7 @@ export default function ContactPage() {
                             <div>
                                 <h3 className="font-medium text-lg">Adres</h3>
                                 <p className="text-zinc-600 dark:text-zinc-400">
-                                    Ayyıldız Sanayi, Ostim, 1169. Sk. No: 24 Sitesi 1125<br />
+                                    Ostim, Ayyıldız Sanayi Sitesi, 1125/1 Sk. No: 24<br />
                                     06374 Yenimahalle/Ankara
                                 </p>
                             </div>

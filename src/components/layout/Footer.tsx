@@ -83,7 +83,7 @@ export default async function Footer() {
                             </li>
                             <li className="pt-2">
                                 <p className="text-xs">
-                                    Ayyıldız Sanayi, Ostim, 1169. Sk. No: 24 Sitesi 1125, 06374 Yenimahalle/Ankara
+                                    Ostim, Ayyıldız Sanayi Sitesi, 1125/1 Sk. No: 24 06374 Yenimahalle/Ankara
                                 </p>
                             </li>
                         </ul>
