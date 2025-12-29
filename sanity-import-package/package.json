@@ -1,0 +1,21 @@
+{
+  "name": "gema-politek-sanity-import",
+  "version": "1.0.0",
+  "description": "Gema Politek ürün kataloğunu Sanity'ye aktarma scripti",
+  "main": "scripts/import-products.ts",
+  "scripts": {
+    "import": "npx tsx scripts/import-products.ts",
+    "import:dry": "npx tsx scripts/import-products.ts --dry-run",
+    "generate:ndjson": "npx tsx scripts/generate-ndjson.ts",
+    "sanity:import": "sanity dataset import data/products.ndjson production --replace"
+  },
+  "dependencies": {
+    "@sanity/client": "^6.15.0",
+    "csv-parse": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.0.0"
+  }
+}

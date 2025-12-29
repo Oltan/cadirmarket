@@ -65,8 +65,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                     <div className="mb-6">
                         <span className="text-green-600 font-medium">{product.category || "Genel"}</span>
                         <h1 className="text-4xl font-bold mt-2 mb-4">{product.name}</h1>
+                        {product.code && (
+                            <p className="text-sm text-zinc-500 mb-2">Ürün Kodu: {product.code}</p>
+                        )}
                         <p className="text-3xl font-bold text-zinc-900 dark:text-white">
-                            ₺{product.price?.toLocaleString('tr-TR')}
+                            {product.price ? `₺${product.price.toLocaleString('tr-TR')}` : 'Fiyat Sorunuz'}
                         </p>
                     </div>
 
@@ -74,13 +77,33 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         <p>{product.description}</p>
                     </div>
 
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-4 p-4 bg-zinc-50 dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
-                            <div className={`w-3 h-3 rounded-full ${product.stock > 0 ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                            <span className="font-medium">
-                                {product.stock > 0 ? `Stokta Var (${product.stock} adet)` : 'Stokta Yok'}
-                            </span>
+                    {/* Teknik Özellikler */}
+                    {(product.material || product.coating || product.packaging) && (
+                        <div className="mb-6 p-4 bg-zinc-50 dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
+                            <h3 className="font-semibold mb-3">Teknik Özellikler</h3>
+                            <div className="grid grid-cols-2 gap-2 text-sm">
+                                {product.material && (
+                                    <div><span className="text-zinc-500">Malzeme:</span> {product.material}</div>
+                                )}
+                                {product.coating && (
+                                    <div><span className="text-zinc-500">Kaplama:</span> {product.coating}</div>
+                                )}
+                                {product.packaging && (
+                                    <div><span className="text-zinc-500">Paket:</span> {product.packaging}</div>
+                                )}
+                            </div>
                         </div>
+                    )}
+
+                    <div className="space-y-4">
+                        {product.stock !== undefined && product.stock !== null && (
+                            <div className="flex items-center gap-4 p-4 bg-zinc-50 dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
+                                <div className={`w-3 h-3 rounded-full ${product.stock > 0 ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                                <span className="font-medium">
+                                    {product.stock > 0 ? `Stokta Var (${product.stock} adet)` : 'Stokta Yok'}
+                                </span>
+                            </div>
+                        )}
 
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <a
