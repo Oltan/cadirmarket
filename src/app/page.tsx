@@ -1,7 +1,7 @@
 import Hero from "@/components/home/Hero";
 import ProductCard from "@/components/ui/ProductCard";
 import { client } from "@/sanity/lib/client";
-import { PRODUCTS_QUERY } from "@/sanity/lib/queries";
+import { FEATURED_PRODUCTS_QUERY } from "@/sanity/lib/queries";
 
 export const revalidate = 10; // Revalidate every 10 seconds
 
@@ -9,10 +9,10 @@ export default async function Home() {
   let products = [];
 
   try {
-    products = await client.fetch(PRODUCTS_QUERY);
+    // Sadece 8 one cikan urun getir
+    products = await client.fetch(FEATURED_PRODUCTS_QUERY);
   } catch (error) {
     console.error("Sanity bağlantı hatası:", error);
-    // Continue with empty products array
   }
 
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 interface ProductCardProps {
     id: string;
     name: string;
-    price: number;
+    price?: number | null;
     image: string;
     category: string;
 }
@@ -30,7 +30,7 @@ export default function ProductCard({ id, name, price, image, category }: Produc
                     </h3>
                     <div className="flex items-center justify-between">
                         <span className="text-xl font-bold text-zinc-900 dark:text-white">
-                            ₺{price.toLocaleString('tr-TR')}
+                            {price ? `₺${price.toLocaleString('tr-TR')}` : 'Fiyat Sorunuz'}
                         </span>
                         <span className="text-sm text-green-600 font-medium group-hover:underline">
                             İncele &rarr;
