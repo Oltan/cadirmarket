@@ -5,14 +5,24 @@ interface PaginationProps {
     totalPages: number;
     basePath: string;
     category?: string;
+    searchQuery?: string;
 }
 
-export default function Pagination({ currentPage, totalPages, basePath, category }: PaginationProps) {
+export default function Pagination({ currentPage, totalPages, basePath, category, searchQuery }: PaginationProps) {
     if (totalPages <= 1) return null;
 
     const getPageUrl = (page: number) => {
-        const categoryParam = category ? `&category=${category}` : "";
-        return `${basePath}?page=${page}${categoryParam}`;
+        const params = new URLSearchParams();
+
+        if (searchQuery) {
+            params.set('q', searchQuery);
+        }
+        if (category) {
+            params.set('category', category);
+        }
+        params.set('page', page.toString());
+
+        return `${basePath}?${params.toString()}`;
     };
 
     const renderPageNumbers = () => {
@@ -20,7 +30,7 @@ export default function Pagination({ currentPage, totalPages, basePath, category
         const maxVisiblePages = 5;
 
         let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+        const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
         if (endPage - startPage + 1 < maxVisiblePages) {
             startPage = Math.max(1, endPage - maxVisiblePages + 1);

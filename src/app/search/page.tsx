@@ -96,7 +96,8 @@ async function SearchResults({ searchParams }: SearchPageProps) {
             <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
-              baseUrl={`/search?q=${encodeURIComponent(searchTerm)}`}
+              basePath="/search"
+              searchQuery={searchTerm}
             />
           )}
         </>
