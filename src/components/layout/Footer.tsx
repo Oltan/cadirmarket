@@ -29,11 +29,8 @@ export default async function Footer() {
                     {/* Hakkımızda */}
                     <div>
                         <h3 className="text-lg font-bold mb-4">ÇadırMarket</h3>
-                        <p className="text-sm text-zinc-500 mb-4">
-                            Branda, çadır ve endüstriyel koruma sistemlerinde 30 yılı aşkın tecrübemizle profesyonel çözümler sunuyoruz.
-                        </p>
                         <p className="text-sm text-zinc-500">
-                            Gema Politek yetkili distribütörü olarak kaliteli ürünleri uygun fiyatlarla sizlere ulaştırıyoruz.
+                            Branda, çadır ve endüstriyel koruma sistemlerinde 30 yılı aşkın tecrübemizle profesyonel çözümler sunuyoruz.
                         </p>
                     </div>
 
