@@ -78,3 +78,41 @@ export const PRODUCTS_BY_CATEGORY_QUERY = defineQuery(`*[_type == "product" && c
   "category": category->title
 }`);
 
+// Paginated products queries
+export const PRODUCTS_PAGINATED_QUERY = defineQuery(`*[_type == "product"] | order(_createdAt desc) [$start...$end] {
+  _id,
+  "name": coalesce(name, title),
+  title,
+  code,
+  slug,
+  price,
+  stock,
+  description,
+  material,
+  coating,
+  packaging,
+  "imageUrl": coalesce(images[0].asset->url, mainImage.asset->url),
+  "category": category->title
+}`);
+
+export const PRODUCTS_BY_CATEGORY_PAGINATED_QUERY = defineQuery(`*[_type == "product" && category->slug.current == $categorySlug] | order(_createdAt desc) [$start...$end] {
+  _id,
+  "name": coalesce(name, title),
+  title,
+  code,
+  slug,
+  price,
+  stock,
+  description,
+  material,
+  coating,
+  packaging,
+  "imageUrl": coalesce(images[0].asset->url, mainImage.asset->url),
+  "category": category->title
+}`);
+
+// Count queries for pagination
+export const PRODUCTS_COUNT_QUERY = defineQuery(`count(*[_type == "product"])`);
+
+export const PRODUCTS_BY_CATEGORY_COUNT_QUERY = defineQuery(`count(*[_type == "product" && category->slug.current == $categorySlug])`);
+
