@@ -116,3 +116,38 @@ export const PRODUCTS_COUNT_QUERY = defineQuery(`count(*[_type == "product"])`);
 
 export const PRODUCTS_BY_CATEGORY_COUNT_QUERY = defineQuery(`count(*[_type == "product" && category->slug.current == $categorySlug])`);
 
+// Search queries
+export const PRODUCTS_SEARCH_QUERY = defineQuery(`*[_type == "product" && (
+  coalesce(title, name) match $searchTerm + "*" ||
+  description match $searchTerm + "*" ||
+  code match $searchTerm + "*" ||
+  sku match $searchTerm + "*" ||
+  brand match $searchTerm + "*" ||
+  model match $searchTerm + "*" ||
+  material match $searchTerm + "*"
+)] | order(_createdAt desc) [$start...$end] {
+  _id,
+  "name": coalesce(name, title),
+  title,
+  code,
+  slug,
+  price,
+  stock,
+  description,
+  material,
+  coating,
+  packaging,
+  "imageUrl": coalesce(images[0].asset->url, mainImage.asset->url),
+  "category": category->title
+}`);
+
+export const PRODUCTS_SEARCH_COUNT_QUERY = defineQuery(`count(*[_type == "product" && (
+  coalesce(title, name) match $searchTerm + "*" ||
+  description match $searchTerm + "*" ||
+  code match $searchTerm + "*" ||
+  sku match $searchTerm + "*" ||
+  brand match $searchTerm + "*" ||
+  model match $searchTerm + "*" ||
+  material match $searchTerm + "*"
+)])`);
+

@@ -1,12 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Menu, Search, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 
 export default function Navbar() {
+    const router = useRouter();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -20,6 +23,15 @@ export default function Navbar() {
 
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
+    };
+
+    const handleSearch = (e: FormEvent) => {
+        e.preventDefault();
+        if (searchTerm.trim()) {
+            router.push(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+            setIsSearchOpen(false);
+            setSearchTerm('');
+        }
     };
 
     return (
@@ -94,12 +106,23 @@ export default function Navbar() {
             {isSearchOpen && (
                 <div className="border-t dark:border-zinc-800 bg-white dark:bg-black">
                     <div className="container mx-auto px-4 py-4">
-                        <input
-                            type="text"
-                            placeholder="Ürün ara..."
-                            className="w-full px-4 py-2 border rounded-lg dark:bg-zinc-900 dark:border-zinc-800 focus:outline-none focus:ring-2 focus:ring-green-600"
-                            autoFocus
-                        />
+                        <form onSubmit={handleSearch} className="relative">
+                            <input
+                                type="text"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                placeholder="Ürün ara..."
+                                className="w-full px-4 py-2 pr-10 border rounded-lg dark:bg-zinc-900 dark:border-zinc-800 focus:outline-none focus:ring-2 focus:ring-green-600"
+                                autoFocus
+                            />
+                            <button
+                                type="submit"
+                                className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-colors"
+                                aria-label="Search"
+                            >
+                                <Search className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
+                            </button>
+                        </form>
                     </div>
                 </div>
             )}
