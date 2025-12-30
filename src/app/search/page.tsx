@@ -10,6 +10,9 @@ interface Product {
   _id: string;
   name: string;
   title?: string;
+  slug?: {
+    current: string;
+  };
   price?: number | null;
   imageUrl: string;
   category: string;
@@ -83,7 +86,7 @@ async function SearchResults({ searchParams }: SearchPageProps) {
             {products.map((product: Product) => (
               <ProductCard
                 key={product._id}
-                id={product._id}
+                id={product.slug?.current || product._id}
                 name={product.name || product.title || ''}
                 price={product.price}
                 image={product.imageUrl || '/placeholder-product.jpg'}
