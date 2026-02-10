@@ -1,6 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { PRODUCT_QUERY } from "@/sanity/lib/queries";
-import Image from "next/image";
+import ProductGallery from "@/components/ui/ProductGallery";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Metadata, ResolvingMetadata } from "next";
@@ -50,15 +50,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 {/* Görsel Alanı */}
-                <div className="relative h-[400px] md:h-[600px] bg-zinc-100 dark:bg-zinc-800 rounded-2xl overflow-hidden">
-                    <Image
-                        src={product.images?.[0] || "/images/2025-09-16.jpg"}
-                        alt={product.name}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                </div>
+                <ProductGallery images={product.images || []} name={product.name} />
 
                 {/* Detay Alanı */}
                 <div>

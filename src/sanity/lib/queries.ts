@@ -12,7 +12,7 @@ export const PRODUCTS_QUERY = defineQuery(`*[_type == "product"]{
   material,
   coating,
   packaging,
-  "imageUrl": coalesce(images[0].asset->url, mainImage.asset->url),
+  "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
   "category": category->title
 }`);
 
@@ -32,7 +32,7 @@ export const PRODUCT_QUERY = defineQuery(`*[_type == "product" && slug.current =
   brand,
   sku,
   seo,
-  "images": coalesce(images[].asset->url, [mainImage.asset->url]),
+  "images": coalesce(gallery[].asset->url, images[].asset->url, [mainImage.asset->url]),
   "category": category->title
 }`);
 
@@ -50,7 +50,7 @@ export const FEATURED_PRODUCTS_QUERY = defineQuery(`*[_type == "product" && defi
   code,
   slug,
   price,
-  "imageUrl": coalesce(images[0].asset->url, mainImage.asset->url),
+  "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
   "category": category->title
 }`);
 
@@ -74,7 +74,7 @@ export const PRODUCTS_BY_CATEGORY_QUERY = defineQuery(`*[_type == "product" && c
   material,
   coating,
   packaging,
-  "imageUrl": coalesce(images[0].asset->url, mainImage.asset->url),
+  "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
   "category": category->title
 }`);
 
@@ -91,7 +91,7 @@ export const PRODUCTS_PAGINATED_QUERY = defineQuery(`*[_type == "product"] | ord
   material,
   coating,
   packaging,
-  "imageUrl": coalesce(images[0].asset->url, mainImage.asset->url),
+  "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
   "category": category->title
 }`);
 
@@ -107,7 +107,7 @@ export const PRODUCTS_BY_CATEGORY_PAGINATED_QUERY = defineQuery(`*[_type == "pro
   material,
   coating,
   packaging,
-  "imageUrl": coalesce(images[0].asset->url, mainImage.asset->url),
+  "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
   "category": category->title
 }`);
 
@@ -137,7 +137,7 @@ export const PRODUCTS_SEARCH_QUERY = defineQuery(`*[_type == "product" && (
   material,
   coating,
   packaging,
-  "imageUrl": coalesce(images[0].asset->url, mainImage.asset->url),
+  "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
   "category": category->title
 }`);
 

@@ -18,7 +18,7 @@ export default function ProductCard({ id, name, price, image, category }: Produc
                         src={image}
                         alt={name}
                         fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                        className="object-contain transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute top-3 left-3 bg-black/50 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full">
                         {category}
