@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next'
 import { client } from '@/sanity/lib/client'
 import { PRODUCTS_QUERY } from '@/sanity/lib/queries'
 
+export const dynamic = 'force-dynamic'
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://cadirmarket.com'
 
