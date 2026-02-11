@@ -54,6 +54,26 @@ export const FEATURED_PRODUCTS_QUERY = defineQuery(`*[_type == "product" && defi
   "category": category->title
 }`);
 
+// Ana sayfa icin kategori bazli urunler (her kategoriden en fazla 8 urun)
+export const HOME_PRODUCTS_WITH_CATEGORIES_QUERY = defineQuery(`{
+  "categories": *[_type == "category"] | order(title asc) {
+    _id,
+    title,
+    slug
+  },
+  "products": *[_type == "product"] | order(_createdAt desc) {
+    _id,
+    "name": coalesce(name, title),
+    title,
+    code,
+    slug,
+    price,
+    "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
+    "category": category->title,
+    "categorySlug": category->slug.current
+  }
+}`);
+
 // Footer icin ana kategoriler (en cok urun iceren 10 kategori)
 export const MAIN_CATEGORIES_QUERY = defineQuery(`*[_type == "category"] {
   _id,

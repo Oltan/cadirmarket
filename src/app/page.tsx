@@ -1,57 +1,27 @@
 import Hero from "@/components/home/Hero";
-import ProductCard from "@/components/ui/ProductCard";
+import FeaturedProducts from "@/components/home/FeaturedProducts";
 import { client } from "@/sanity/lib/client";
-import { FEATURED_PRODUCTS_QUERY } from "@/sanity/lib/queries";
+import { HOME_PRODUCTS_WITH_CATEGORIES_QUERY } from "@/sanity/lib/queries";
 
 export const revalidate = 10; // Revalidate every 10 seconds
 
 export default async function Home() {
-  let products = [];
+  let categories: any[] = [];
+  let products: any[] = [];
 
   try {
-    // Sadece 8 one cikan urun getir
-    products = await client.fetch(FEATURED_PRODUCTS_QUERY);
+    const data = await client.fetch(HOME_PRODUCTS_WITH_CATEGORIES_QUERY);
+    categories = data?.categories || [];
+    products = data?.products || [];
   } catch (error) {
     console.error("Sanity bağlantı hatası:", error);
   }
-
 
   return (
     <div className="flex flex-col min-h-screen">
       <Hero />
 
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="text-3xl font-bold tracking-tight">Öne Çıkan Ürünler</h2>
-            <a href="/products" className="text-green-600 font-medium hover:underline">
-              Tümünü Gör &rarr;
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {products.length > 0 ? (
-              products.map((product: any) => (
-                <ProductCard
-                  key={product._id}
-                  id={product.slug?.current} // Using slug as ID for routing
-                  name={product.name}
-                  price={product.price}
-                  image={product.imageUrl || "/images/2025-09-16.jpg"}
-                  category={product.category || "Genel"}
-                />
-              ))
-            ) : (
-              <div className="col-span-full text-center py-12 bg-zinc-50 dark:bg-zinc-900 rounded-xl">
-                <p className="text-zinc-500 mb-4">Henüz ürün eklenmemiş.</p>
-                <a href="/studio" target="_blank" className="text-green-600 font-medium hover:underline">
-                  Yönetim Paneline Git ve Ürün Ekle &rarr;
-                </a>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      <FeaturedProducts categories={categories} products={products} />
 
       <section className="bg-zinc-100 dark:bg-zinc-900 py-20 px-4">
         <div className="container mx-auto text-center max-w-3xl">
