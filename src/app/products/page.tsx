@@ -135,7 +135,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                             id={product.slug?.current || product._id}
                             name={product.name}
                             price={product.price}
-                            image={product.imageUrl || "/images/2025-09-16.jpg"}
+                            image={product.imageUrl || "/images/2025-09-16.png"}
                             category={product.category || "Genel"}
                         />
                     ))

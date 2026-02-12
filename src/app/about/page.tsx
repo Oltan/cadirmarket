@@ -8,7 +8,7 @@ export default function AboutPage() {
 
                 <div className="relative h-[400px] w-full mb-12 rounded-2xl overflow-hidden shadow-xl">
                     <Image
-                        src="/images/2025-09-16.jpg"
+                        src="/images/2025-09-16.png"
                         alt="Kamp ateşi ve çadır"
                         fill
                         className="object-cover"
