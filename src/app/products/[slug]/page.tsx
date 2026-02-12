@@ -27,7 +27,7 @@ export async function generateMetadata(
             title: product.name,
             description: product.description?.slice(0, 160),
             images: [
-                product.images?.[0] || "/images/2025-09-16.jpg",
+                product.images?.[0] || "/images/2025-09-16.png",
                 ...previousImages,
             ],
         },

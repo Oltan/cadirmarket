@@ -11,10 +11,7 @@ interface ProductGalleryProps {
 
 export default function ProductGallery({ images, name }: ProductGalleryProps) {
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [lightboxOpen, setLightboxOpen] = useState(false);
-    const touchStartX = useRef<number | null>(null);
-
-    const fallback = "/images/2025-09-16.jpg";
+    const fallback = "/images/2025-09-16.png";
     const displayImages = images.length > 0 ? images : [fallback];
 
     const goToPrev = useCallback(() => {
