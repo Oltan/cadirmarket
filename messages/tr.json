@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "products": "Ürünler",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "home": {
+    "hero": {
+      "title": "Çadır ve Branda Çözümlerinde Uzman",
+      "subtitle": "30 yılı aşkın tecrübemizle, endüstriyel koruma sistemlerinde profesyonel çözümler sunuyoruz",
+      "cta": "Ürünleri İncele"
+    },
+    "featured": "Öne Çıkan Ürünler"
+  },
+  "products": {
+    "title": "Tüm Ürünler",
+    "found": "{count} ürün bulundu",
+    "page": "Sayfa {current} / {total}",
+    "noProducts": "Henüz ürün eklenmemiş.",
+    "noCategoryProducts": "Bu kategoride ürün bulunamadı.",
+    "viewDetails": "İncele",
+    "all": "Tümü",
+    "askPrice": "Fiyat Sorunuz"
+  },
+  "product": {
+    "backToProducts": "Ürünlere Dön",
+    "code": "Ürün Kodu",
+    "specs": "Teknik Özellikler",
+    "material": "Malzeme",
+    "coating": "Kaplama",
+    "packaging": "Paket",
+    "inStock": "Stokta Var ({count} adet)",
+    "outOfStock": "Stokta Yok",
+    "whatsapp": "WhatsApp",
+    "shop": "Dükkan",
+    "general": "Genel"
+  },
+  "contact": {
+    "title": "İletişim",
+    "getInTouch": "Bize Ulaşın",
+    "description": "Sorularınız, önerileriniz veya işbirlikleri için bizimle iletişime geçmekten çekinmeyin. Ekibimiz en kısa sürede size dönüş yapacaktır.",
+    "address": "Adres",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "sendMessage": "Mesaj Gönder",
+    "name": "Adınız Soyadınız",
+    "namePlaceholder": "Adınız",
+    "email": "E-posta Adresiniz",
+    "emailPlaceholder": "ornek@email.com",
+    "message": "Mesajınız",
+    "messagePlaceholder": "Mesajınızı buraya yazın...",
+    "send": "Gönder",
+    "sending": "Gönderiliyor...",
+    "success": "Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.",
+    "error": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya WhatsApp üzerinden bize ulaşın.",
+    "whatsappContact": "WhatsApp ile iletişime geç"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "experience": "30+ Yıllık Tecrübe",
+    "experienceDesc": "Sektörde uzun yıllara dayanan tecrübemizle, müşterilerimize en kaliteli hizmeti sunuyoruz.",
+    "quality": "Kalite Garantisi",
+    "qualityDesc": "Tüm ürünlerimiz uluslararası standartlara uygun olarak üretilmektedir.",
+    "service": "Müşteri Memnuniyeti",
+    "serviceDesc": "Satış sonrası destek ve müşteri memnuniyeti bizim için önceliklidir.",
+    "whyUs": "Neden Bizi Tercih Etmelisiniz?",
+    "story": {
+      "title": "Hikayemiz",
+      "text": "Çadır Market olarak, 30 yılı aşkın süredir branda, çadır ve endüstriyel koruma sistemleri alanında faaliyet göstermekteyiz. Gema Politek'in yetkili distribütörü olarak, sektörün önde gelen markalarının ürünlerini müşterilerimize sunuyoruz."
+    }
+  },
+  "footer": {
+    "about": "ÇadırMarket",
+    "aboutText": "Branda, çadır ve endüstriyel koruma sistemlerinde 30 yılı aşkın tecrübemizle profesyonel çözümler sunuyoruz.",
+    "popularCategories": "Popüler Kategoriler",
+    "allCategories": "Tüm Kategoriler",
+    "corporate": "Kurumsal",
+    "aboutUs": "Hakkımızda",
+    "ourProducts": "Ürünlerimiz",
+    "contact": "İletişim",
+    "privacy": "Gizlilik Politikası",
+    "contactInfo": "İletişim",
+    "shop": "Dükkan",
+    "whatsappContact": "WhatsApp ile İletişim",
+    "rights": "Tüm hakları saklıdır.",
+    "distributor": "Gema Politek Yetkili Distribütörü"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "tryAgain": "Tekrar Dene"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Expert in Tent and Tarpaulin Solutions",
+      "subtitle": "With over 30 years of experience, we provide professional solutions in industrial protection systems",
+      "cta": "Browse Products"
+    },
+    "featured": "Featured Products"
+  },
+  "products": {
+    "title": "All Products",
+    "found": "{count} products found",
+    "page": "Page {current} / {total}",
+    "noProducts": "No products added yet.",
+    "noCategoryProducts": "No products found in this category.",
+    "viewDetails": "View Details",
+    "all": "All",
+    "askPrice": "Ask for Price"
+  },
+  "product": {
+    "backToProducts": "Back to Products",
+    "code": "Product Code",
+    "specs": "Technical Specifications",
+    "material": "Material",
+    "coating": "Coating",
+    "packaging": "Package",
+    "inStock": "In Stock ({count} units)",
+    "outOfStock": "Out of Stock",
+    "whatsapp": "WhatsApp",
+    "shop": "Shop",
+    "general": "General"
+  },
+  "contact": {
+    "title": "Contact",
+    "getInTouch": "Get in Touch",
+    "description": "Feel free to contact us for your questions, suggestions, or collaborations. Our team will get back to you as soon as possible.",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "sendMessage": "Send Message",
+    "name": "Your Name",
+    "namePlaceholder": "Your name",
+    "email": "Your Email",
+    "emailPlaceholder": "example@email.com",
+    "message": "Your Message",
+    "messagePlaceholder": "Write your message here...",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Your message has been sent successfully! We will get back to you soon.",
+    "error": "An error occurred. Please try again later or contact us via WhatsApp.",
+    "whatsappContact": "Contact via WhatsApp"
+  },
+  "about": {
+    "title": "About Us",
+    "experience": "30+ Years of Experience",
+    "experienceDesc": "With our years of experience in the industry, we provide the highest quality service to our customers.",
+    "quality": "Quality Guarantee",
+    "qualityDesc": "All our products are manufactured in accordance with international standards.",
+    "service": "Customer Satisfaction",
+    "serviceDesc": "After-sales support and customer satisfaction are our priority.",
+    "whyUs": "Why Choose Us?",
+    "story": {
+      "title": "Our Story",
+      "text": "As Çadır Market, we have been operating in the field of tarpaulin, tent and industrial protection systems for over 30 years. As the authorized distributor of Gema Politek, we offer products from the leading brands of the industry to our customers."
+    }
+  },
+  "footer": {
+    "about": "ÇadırMarket",
+    "aboutText": "We provide professional solutions in tarpaulin, tent and industrial protection systems with over 30 years of experience.",
+    "popularCategories": "Popular Categories",
+    "allCategories": "All Categories",
+    "corporate": "Corporate",
+    "aboutUs": "About Us",
+    "ourProducts": "Our Products",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "contactInfo": "Contact",
+    "shop": "Shop",
+    "whatsappContact": "Contact via WhatsApp",
+    "rights": "All rights reserved.",
+    "distributor": "Authorized Distributor of Gema Politek"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try Again"
+  }
+}
