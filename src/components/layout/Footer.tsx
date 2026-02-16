@@ -93,11 +93,20 @@ export default async function Footer() {
                         <ul className="space-y-3 text-sm text-zinc-500">
                             <li>
                                 <a
+                                    href="tel:03123855814"
+                                    className="hover:text-green-600 transition-colors flex items-center gap-2"
+                                >
+                                    <Phone className="w-4 h-4 flex-shrink-0" />
+                                    <span>0312 385 58 14 <span className="text-xs text-zinc-400">(Dükkan)</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
                                     href="tel:05322183061"
                                     className="hover:text-green-600 transition-colors flex items-center gap-2"
                                 >
                                     <Phone className="w-4 h-4 flex-shrink-0" />
-                                    <span>0532 218 30 61</span>
+                                    <span>0532 218 30 61 <span className="text-xs text-zinc-400">(Murat Demirel)</span></span>
                                 </a>
                             </li>
                             <li>
