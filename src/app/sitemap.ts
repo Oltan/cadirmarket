@@ -4,44 +4,36 @@ import { PRODUCTS_QUERY } from '@/sanity/lib/queries'
 
 export const dynamic = 'force-dynamic'
 
+const locales = ['tr', 'en']
+const baseUrl = 'https://cadirmarket.com'
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = 'https://cadirmarket.com'
+    const products = await client.fetch(PRODUCTS_QUERY, { locale: 'tr' })
 
-    // Tüm ürünleri getir
-    const products = await client.fetch(PRODUCTS_QUERY)
-
-    const productUrls = products.map((product: any) => ({
-        url: `${baseUrl}/products/${product.slug.current}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.8,
-    }))
-
-    return [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/about`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/contact`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/products`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        ...productUrls,
+    const staticPages = [
+        { path: '', priority: 1, changeFrequency: 'daily' as const },
+        { path: '/products', priority: 0.8, changeFrequency: 'weekly' as const },
+        { path: '/about', priority: 0.5, changeFrequency: 'monthly' as const },
+        { path: '/contact', priority: 0.5, changeFrequency: 'monthly' as const },
     ]
+
+    const staticUrls = staticPages.flatMap(({ path, priority, changeFrequency }) =>
+        locales.map(locale => ({
+            url: `${baseUrl}/${locale}${path}`,
+            lastModified: new Date(),
+            changeFrequency,
+            priority,
+        }))
+    )
+
+    const productUrls = products.flatMap((product: any) =>
+        locales.map(locale => ({
+            url: `${baseUrl}/${locale}/products/${product.slug.current}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.7,
+        }))
+    )
+
+    return [...staticUrls, ...productUrls]
 }

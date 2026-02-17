@@ -2,7 +2,7 @@ import { defineQuery } from "next-sanity";
 
 export const PRODUCTS_QUERY = defineQuery(`*[_type == "product"]{
   _id,
-  "name": coalesce(name, title),
+  "name": coalesce(select($locale == "en" => titleEn, title), name, title),
   title,
   code,
   slug,
@@ -13,18 +13,18 @@ export const PRODUCTS_QUERY = defineQuery(`*[_type == "product"]{
   coating,
   packaging,
   "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
-  "category": category->title
+  "category": coalesce(select($locale == "en" => category->titleEn, category->title), category->title)
 }`);
 
 export const PRODUCT_QUERY = defineQuery(`*[_type == "product" && slug.current == $slug][0]{
   _id,
-  "name": coalesce(name, title),
+  "name": coalesce(select($locale == "en" => titleEn, title), name, title),
   title,
   code,
   slug,
   price,
   stock,
-  description,
+  "description": coalesce(select($locale == "en" => descriptionEn, description), description),
   material,
   coating,
   packaging,
@@ -33,7 +33,7 @@ export const PRODUCT_QUERY = defineQuery(`*[_type == "product" && slug.current =
   sku,
   seo,
   "images": coalesce(gallery[].asset->url, images[].asset->url, [mainImage.asset->url]),
-  "category": category->title
+  "category": coalesce(select($locale == "en" => category->titleEn, category->title), category->title)
 }`);
 
 export const CATEGORIES_QUERY = defineQuery(`*[_type == "category"] | order(title asc) {
@@ -45,13 +45,13 @@ export const CATEGORIES_QUERY = defineQuery(`*[_type == "category"] | order(titl
 // Ana sayfa icin one cikan urunler (8 adet, gorseli olan urunlerden)
 export const FEATURED_PRODUCTS_QUERY = defineQuery(`*[_type == "product" && defined(mainImage)] | order(_createdAt desc) [0...8] {
   _id,
-  "name": coalesce(name, title),
+  "name": coalesce(select($locale == "en" => titleEn, title), name, title),
   title,
   code,
   slug,
   price,
   "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
-  "category": category->title
+  "category": coalesce(select($locale == "en" => category->titleEn, category->title), category->title)
 }`);
 
 // Footer icin ana kategoriler (en cok urun iceren 10 kategori)
@@ -64,7 +64,7 @@ export const MAIN_CATEGORIES_QUERY = defineQuery(`*[_type == "category"] {
 
 export const PRODUCTS_BY_CATEGORY_QUERY = defineQuery(`*[_type == "product" && category->slug.current == $categorySlug]{
   _id,
-  "name": coalesce(name, title),
+  "name": coalesce(select($locale == "en" => titleEn, title), name, title),
   title,
   code,
   slug,
@@ -75,13 +75,13 @@ export const PRODUCTS_BY_CATEGORY_QUERY = defineQuery(`*[_type == "product" && c
   coating,
   packaging,
   "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
-  "category": category->title
+  "category": coalesce(select($locale == "en" => category->titleEn, category->title), category->title)
 }`);
 
 // Paginated products queries
 export const PRODUCTS_PAGINATED_QUERY = defineQuery(`*[_type == "product"] | order(_createdAt desc) [$start...$end] {
   _id,
-  "name": coalesce(name, title),
+  "name": coalesce(select($locale == "en" => titleEn, title), name, title),
   title,
   code,
   slug,
@@ -92,12 +92,12 @@ export const PRODUCTS_PAGINATED_QUERY = defineQuery(`*[_type == "product"] | ord
   coating,
   packaging,
   "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
-  "category": category->title
+  "category": coalesce(select($locale == "en" => category->titleEn, category->title), category->title)
 }`);
 
 export const PRODUCTS_BY_CATEGORY_PAGINATED_QUERY = defineQuery(`*[_type == "product" && category->slug.current == $categorySlug] | order(_createdAt desc) [$start...$end] {
   _id,
-  "name": coalesce(name, title),
+  "name": coalesce(select($locale == "en" => titleEn, title), name, title),
   title,
   code,
   slug,
@@ -108,7 +108,7 @@ export const PRODUCTS_BY_CATEGORY_PAGINATED_QUERY = defineQuery(`*[_type == "pro
   coating,
   packaging,
   "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
-  "category": category->title
+  "category": coalesce(select($locale == "en" => category->titleEn, category->title), category->title)
 }`);
 
 // Count queries for pagination
@@ -127,7 +127,7 @@ export const PRODUCTS_SEARCH_QUERY = defineQuery(`*[_type == "product" && (
   material match $searchTerm + "*"
 )] | order(_createdAt desc) [$start...$end] {
   _id,
-  "name": coalesce(name, title),
+  "name": coalesce(select($locale == "en" => titleEn, title), name, title),
   title,
   code,
   slug,
@@ -138,7 +138,7 @@ export const PRODUCTS_SEARCH_QUERY = defineQuery(`*[_type == "product" && (
   coating,
   packaging,
   "imageUrl": coalesce(gallery[0].asset->url, images[0].asset->url, mainImage.asset->url),
-  "category": category->title
+  "category": coalesce(select($locale == "en" => category->titleEn, category->title), category->title)
 }`);
 
 export const PRODUCTS_SEARCH_COUNT_QUERY = defineQuery(`count(*[_type == "product" && (

@@ -7,9 +7,14 @@ export const category = defineType({
     fields: [
         defineField({
             name: 'title',
-            title: 'Kategori Adi',
+            title: 'Kategori Adi (Türkçe)',
             type: 'string',
             validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'titleEn',
+            title: 'Category Name (English)',
+            type: 'string',
         }),
         defineField({
             name: 'slug',

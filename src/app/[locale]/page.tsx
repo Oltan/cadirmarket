@@ -2,19 +2,21 @@ import Hero from "@/components/home/Hero";
 import ProductCard from "@/components/ui/ProductCard";
 import { client } from "@/sanity/lib/client";
 import { FEATURED_PRODUCTS_QUERY } from "@/sanity/lib/queries";
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 
-export const revalidate = 10; // Revalidate every 10 seconds
+export const revalidate = 10;
 
-export default async function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'home' });
+
   let products = [];
-
   try {
-    // Sadece 8 one cikan urun getir
-    products = await client.fetch(FEATURED_PRODUCTS_QUERY);
+    products = await client.fetch(FEATURED_PRODUCTS_QUERY, { locale });
   } catch (error) {
     console.error("Sanity bağlantı hatası:", error);
   }
-
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -23,10 +25,10 @@ export default async function Home() {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="flex items-center justify-between mb-10">
-            <h2 className="text-3xl font-bold tracking-tight">Öne Çıkan Ürünler</h2>
-            <a href="/products" className="text-green-600 font-medium hover:underline">
+            <h2 className="text-3xl font-bold tracking-tight">{t('featured')}</h2>
+            <Link href="/products" className="text-green-600 font-medium hover:underline">
               Tümünü Gör &rarr;
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -34,7 +36,7 @@ export default async function Home() {
               products.map((product: any) => (
                 <ProductCard
                   key={product._id}
-                  id={product.slug?.current} // Using slug as ID for routing
+                  id={product.slug?.current}
                   name={product.name}
                   price={product.price}
                   image={product.imageUrl || "/images/2025-09-16.png"}

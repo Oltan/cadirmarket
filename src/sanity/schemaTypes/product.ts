@@ -12,9 +12,14 @@ export const product = defineType({
         }),
         defineField({
             name: 'title',
-            title: 'Urun Adi',
+            title: 'Urun Adi (Türkçe)',
             type: 'string',
             validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'titleEn',
+            title: 'Product Name (English)',
+            type: 'string',
         }),
         defineField({
             name: 'name',
@@ -33,7 +38,12 @@ export const product = defineType({
         }),
         defineField({
             name: 'description',
-            title: 'Aciklama',
+            title: 'Aciklama (Türkçe)',
+            type: 'text',
+        }),
+        defineField({
+            name: 'descriptionEn',
+            title: 'Description (English)',
             type: 'text',
         }),
         defineField({
