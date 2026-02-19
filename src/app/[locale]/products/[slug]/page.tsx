@@ -11,7 +11,7 @@ export async function generateMetadata(
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     const { slug, locale } = await params;
-    const product = await client.fetch(PRODUCT_QUERY, { slug });
+    const product = await client.fetch(PRODUCT_QUERY, { slug, locale });
 
     if (!product) return { title: locale === 'en' ? "Product Not Found | Çadır Market" : "Ürün Bulunamadı | Çadır Market" };
 
@@ -30,7 +30,7 @@ export async function generateMetadata(
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
     const { slug, locale } = await params;
     const [product, t] = await Promise.all([
-        client.fetch(PRODUCT_QUERY, { slug }),
+        client.fetch(PRODUCT_QUERY, { slug, locale }),
         getTranslations({ locale, namespace: 'product' })
     ]);
 

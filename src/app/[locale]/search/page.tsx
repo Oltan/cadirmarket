@@ -65,7 +65,7 @@ async function SearchResults({ params, searchParams }: SearchPageProps) {
     }
 
     const [products, totalProducts] = await Promise.all([
-        client.fetch(PRODUCTS_SEARCH_QUERY, { searchTerm, start, end }),
+        client.fetch(PRODUCTS_SEARCH_QUERY, { searchTerm, start, end, locale }),
         client.fetch(PRODUCTS_SEARCH_COUNT_QUERY, { searchTerm }),
     ]);
 

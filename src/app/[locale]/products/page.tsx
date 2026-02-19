@@ -64,12 +64,12 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
 
         if (selectedCategory) {
             [products, totalProducts] = await Promise.all([
-                client.fetch(PRODUCTS_BY_CATEGORY_PAGINATED_QUERY, { categorySlug: selectedCategory, start, end }),
+                client.fetch(PRODUCTS_BY_CATEGORY_PAGINATED_QUERY, { categorySlug: selectedCategory, start, end, locale }),
                 client.fetch(PRODUCTS_BY_CATEGORY_COUNT_QUERY, { categorySlug: selectedCategory })
             ]);
         } else {
             [products, totalProducts] = await Promise.all([
-                client.fetch(PRODUCTS_PAGINATED_QUERY, { start, end }),
+                client.fetch(PRODUCTS_PAGINATED_QUERY, { start, end, locale }),
                 client.fetch(PRODUCTS_COUNT_QUERY)
             ]);
         }
