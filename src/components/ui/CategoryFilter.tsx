@@ -1,6 +1,7 @@
 'use client';
 
 import { Link, useRouter } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 interface Category {
     _id: string;
@@ -17,6 +18,7 @@ interface CategoryFilterProps {
 
 export default function CategoryFilter({ categories, selectedCategory }: CategoryFilterProps) {
     const router = useRouter();
+    const t = useTranslations('products');
 
     const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const category = e.target.value;
@@ -25,7 +27,7 @@ export default function CategoryFilter({ categories, selectedCategory }: Categor
 
     return (
         <div className="mb-10">
-            <h2 className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-3">Kategoriler</h2>
+            <h2 className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-3">{t('categories')}</h2>
 
             {/* Mobile Dropdown */}
             <div className="md:hidden">
@@ -34,7 +36,7 @@ export default function CategoryFilter({ categories, selectedCategory }: Categor
                     onChange={handleCategoryChange}
                     className="w-full px-4 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-green-600"
                 >
-                    <option value="">Tüm Kategoriler</option>
+                    <option value="">{t('allCategories')}</option>
                     {categories.map((cat) => (
                         <option key={cat._id} value={cat.slug?.current}>
                             {cat.title}
@@ -52,7 +54,7 @@ export default function CategoryFilter({ categories, selectedCategory }: Categor
                         : "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
                         }`}
                 >
-                    Tümü
+                    {t('all')}
                 </Link>
                 {categories.map((cat) => (
                     <Link

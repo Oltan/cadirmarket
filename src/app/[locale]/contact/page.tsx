@@ -66,7 +66,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="font-medium text-lg">{t('phone')}</h3>
-                                <p className="text-xs text-zinc-400 mt-1">Dükkan</p>
+                                <p className="text-xs text-zinc-400 mt-1">{t('shop')}</p>
                                 <a href="tel:03123855814" className="text-zinc-600 dark:text-zinc-400 hover:text-green-600 transition-colors">
                                     0312 385 58 14
                                 </a>

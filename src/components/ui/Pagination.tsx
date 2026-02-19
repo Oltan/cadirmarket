@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 interface PaginationProps {
     currentPage: number;
@@ -9,6 +10,8 @@ interface PaginationProps {
 }
 
 export default function Pagination({ currentPage, totalPages, basePath, category, searchQuery }: PaginationProps) {
+    const t = useTranslations('common');
+
     if (totalPages <= 1) return null;
 
     const getPageUrl = (page: number) => {
@@ -104,11 +107,11 @@ export default function Pagination({ currentPage, totalPages, basePath, category
                     href={getPageUrl(currentPage - 1)}
                     className="px-4 py-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-all font-medium"
                 >
-                    ← Önceki
+                    &larr; {t('previous')}
                 </Link>
             ) : (
                 <span className="px-4 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-900 text-zinc-400 dark:text-zinc-600 cursor-not-allowed font-medium">
-                    ← Önceki
+                    &larr; {t('previous')}
                 </span>
             )}
 
@@ -121,11 +124,11 @@ export default function Pagination({ currentPage, totalPages, basePath, category
                     href={getPageUrl(currentPage + 1)}
                     className="px-4 py-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-all font-medium"
                 >
-                    Sonraki →
+                    {t('next')} &rarr;
                 </Link>
             ) : (
                 <span className="px-4 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-900 text-zinc-400 dark:text-zinc-600 cursor-not-allowed font-medium">
-                    Sonraki →
+                    {t('next')} &rarr;
                 </span>
             )}
         </div>

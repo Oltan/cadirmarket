@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface ProductGalleryProps {
     images: string[];
@@ -10,6 +11,7 @@ interface ProductGalleryProps {
 }
 
 export default function ProductGallery({ images, name }: ProductGalleryProps) {
+    const t = useTranslations('common');
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const touchStartX = useRef<number | null>(null);
@@ -118,7 +120,7 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
                     <button
                         onClick={closeLightbox}
                         className="absolute top-4 right-4 z-10 text-white/70 hover:text-white transition-colors p-2"
-                        aria-label="Kapat"
+                        aria-label={t('close')}
                     >
                         <X size={32} />
                     </button>
@@ -138,7 +140,7 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
                                 goToPrev();
                             }}
                             className="absolute left-2 md:left-6 z-10 text-white/60 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
-                            aria-label="Önceki görsel"
+                            aria-label={t('previousImage')}
                         >
                             <ChevronLeft size={40} />
                         </button>
@@ -166,7 +168,7 @@ export default function ProductGallery({ images, name }: ProductGalleryProps) {
                                 goToNext();
                             }}
                             className="absolute right-2 md:right-6 z-10 text-white/60 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
-                            aria-label="Sonraki görsel"
+                            aria-label={t('nextImage')}
                         >
                             <ChevronRight size={40} />
                         </button>

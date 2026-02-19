@@ -34,14 +34,12 @@ export async function generateMetadata({ params, searchParams }: ProductsPagePro
     const { locale } = await params;
     const sp = await searchParams;
     const currentPage = parseInt(sp.page || "1");
-    const category = sp.category;
+    const t = await getTranslations({ locale, namespace: 'products' });
 
-    let title = locale === 'en' ? "All Products" : "Tüm Ürünler";
-    let description = locale === 'en'
-        ? "Browse our wide product range at Çadır Market."
-        : "Çadır Market'te geniş ürün yelpazemizi keşfedin.";
+    let title = t('title');
+    const description = t('description');
 
-    if (currentPage > 1) title += locale === 'en' ? ` - Page ${currentPage}` : ` - Sayfa ${currentPage}`;
+    if (currentPage > 1) title += ` - ${t('pageN', { n: currentPage })}`;
 
     return { title, description };
 }
@@ -101,7 +99,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
                             name={product.name}
                             price={product.price}
                             image={product.imageUrl || "/images/2025-09-16.png"}
-                            category={product.category || 'Genel'}
+                            category={product.category || t('general')}
                         />
                     ))
                 ) : (

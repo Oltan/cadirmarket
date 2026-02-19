@@ -28,37 +28,36 @@ export async function generateMetadata({ params, searchParams }: SearchPageProps
     const { locale } = await params;
     const sp = await searchParams;
     const searchTerm = sp.q || "";
-    const isEn = locale === 'en';
+    const t = await getTranslations({ locale, namespace: 'search' });
 
     return {
         title: searchTerm
-            ? `"${searchTerm}" ${isEn ? 'Search Results' : 'Arama Sonuçları'} - Çadır Market`
-            : isEn ? "Search Products - Çadır Market" : "Ürün Ara - Çadır Market",
+            ? t('metaResultsTitle', { searchTerm })
+            : t('metaTitle'),
         description: searchTerm
-            ? isEn ? `Search results for "${searchTerm}".` : `"${searchTerm}" için arama sonuçları.`
-            : isEn ? "Search our products." : "Ürünlerimiz arasında arama yapın.",
+            ? t('metaResultsDescription', { searchTerm })
+            : t('metaDescription'),
     };
 }
 
 async function SearchResults({ params, searchParams }: SearchPageProps) {
     const { locale } = await params;
     const sp = await searchParams;
-    const t = await getTranslations({ locale, namespace: 'products' });
+    const t = await getTranslations({ locale, namespace: 'search' });
     const searchTerm = sp.q || "";
     const currentPage = parseInt(sp.page || "1", 10);
     const start = (currentPage - 1) * PRODUCTS_PER_PAGE;
     const end = start + PRODUCTS_PER_PAGE;
-    const isEn = locale === 'en';
 
     if (!searchTerm) {
         return (
             <div className="text-center py-16">
                 <Search className="w-16 h-16 mx-auto mb-4 text-zinc-400" />
                 <h2 className="text-2xl font-bold mb-2 dark:text-white">
-                    {isEn ? 'Search Products' : 'Ürün Arayın'}
+                    {t('searchProducts')}
                 </h2>
                 <p className="text-zinc-600 dark:text-zinc-400">
-                    {isEn ? 'Use the search bar above' : 'Arama yapmak için yukarıdaki arama çubuğunu kullanın'}
+                    {t('useSearchBar')}
                 </p>
             </div>
         );
@@ -75,7 +74,7 @@ async function SearchResults({ params, searchParams }: SearchPageProps) {
         <div>
             <div className="mb-8">
                 <h1 className="text-3xl font-bold mb-2 dark:text-white">
-                    {isEn ? 'Search Results: ' : 'Arama Sonuçları: '}&quot;{searchTerm}&quot;
+                    {t('resultsFor')} &quot;{searchTerm}&quot;
                 </h1>
                 <p className="text-zinc-600 dark:text-zinc-400">
                     {t('found', { count: totalProducts })}
@@ -104,10 +103,10 @@ async function SearchResults({ params, searchParams }: SearchPageProps) {
                 <div className="text-center py-16 bg-zinc-50 dark:bg-zinc-900 rounded-lg">
                     <Search className="w-16 h-16 mx-auto mb-4 text-zinc-400" />
                     <h2 className="text-2xl font-bold mb-2 dark:text-white">
-                        {isEn ? 'No Results Found' : 'Sonuç Bulunamadı'}
+                        {t('noResults')}
                     </h2>
                     <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                        {isEn ? `No products found for "${searchTerm}"` : `"${searchTerm}" için hiçbir ürün bulunamadı`}
+                        {t('noProductsFor', { searchTerm })}
                     </p>
                 </div>
             )}
@@ -117,7 +116,7 @@ async function SearchResults({ params, searchParams }: SearchPageProps) {
 
 export default async function SearchPage({ params, searchParams }: SearchPageProps) {
     const { locale } = await params;
-    const isEn = locale === 'en';
+    const t = await getTranslations({ locale, namespace: 'search' });
 
     return (
         <div className="container mx-auto px-4 py-8">
@@ -125,7 +124,7 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
                 <div className="text-center py-16">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto"></div>
                     <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-                        {isEn ? 'Searching...' : 'Aranıyor...'}
+                        {t('searching')}
                     </p>
                 </div>
             }>

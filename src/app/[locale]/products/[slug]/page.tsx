@@ -11,9 +11,12 @@ export async function generateMetadata(
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     const { slug, locale } = await params;
-    const product = await client.fetch(PRODUCT_QUERY, { slug, locale });
+    const [product, t] = await Promise.all([
+        client.fetch(PRODUCT_QUERY, { slug, locale }),
+        getTranslations({ locale, namespace: 'product' })
+    ]);
 
-    if (!product) return { title: locale === 'en' ? "Product Not Found | Çadır Market" : "Ürün Bulunamadı | Çadır Market" };
+    if (!product) return { title: `${t('notFound')} | Çadır Market` };
 
     const previousImages = (await parent).openGraph?.images || [];
     return {
@@ -84,7 +87,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <a
-                                href={`https://wa.me/905322183061?text=Merhaba, ${product.name} hakkında bilgi almak istiyorum.`}
+                                href={`https://wa.me/905322183061?text=${encodeURIComponent(t('whatsappMessage', { name: product.name }))}`}
                                 target="_blank"
                                 className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl transition-colors"
                             >

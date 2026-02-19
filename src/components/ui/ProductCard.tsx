@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 interface ProductCardProps {
     id: string;
@@ -10,6 +11,8 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ id, name, price, image, category }: ProductCardProps) {
+    const t = useTranslations('products');
+
     return (
         <Link href={`/products/${id}`} className="group">
             <div className="bg-white dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 transition-all hover:shadow-lg hover:border-green-500/50">
@@ -30,10 +33,10 @@ export default function ProductCard({ id, name, price, image, category }: Produc
                     </h3>
                     <div className="flex items-center justify-between">
                         <span className="text-xl font-bold text-zinc-900 dark:text-white">
-                            {price ? `₺${price.toLocaleString('tr-TR')}` : 'Fiyat Sorunuz'}
+                            {price ? `₺${price.toLocaleString('tr-TR')}` : t('askPrice')}
                         </span>
                         <span className="text-sm text-green-600 font-medium group-hover:underline">
-                            İncele &rarr;
+                            {t('viewDetails')} &rarr;
                         </span>
                     </div>
                 </div>

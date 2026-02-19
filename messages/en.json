@@ -3,25 +3,43 @@
     "home": "Home",
     "products": "Products",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "searchPlaceholder": "Search products..."
   },
   "home": {
     "hero": {
       "title": "Expert in Tent and Tarpaulin Solutions",
       "subtitle": "With over 30 years of experience, we provide professional solutions in industrial protection systems",
-      "cta": "Browse Products"
+      "cta": "Browse Products",
+      "imageAlt": "People camping",
+      "contactCta": "Contact Us"
     },
-    "featured": "Featured Products"
+    "featured": "Featured Products",
+    "seeAll": "See All",
+    "noProducts": "No products added yet.",
+    "goToAdmin": "Go to Admin Panel and Add Products",
+    "whyUs": "Why ÇadırMarket?",
+    "durability": "High Durability",
+    "durabilityDesc": "Industrial-standard materials resistant to all weather conditions.",
+    "shipping": "Fast & Secure Shipping",
+    "shippingDesc": "Your orders are carefully packaged and delivered to your address as quickly as possible.",
+    "customSolutions": "Custom Solutions",
+    "customSolutionsDesc": "Custom-sized tarpaulin and tent systems tailored to your needs."
   },
   "products": {
     "title": "All Products",
     "found": "{count} products found",
     "page": "Page {current} / {total}",
+    "pageN": "Page {n}",
     "noProducts": "No products added yet.",
     "noCategoryProducts": "No products found in this category.",
     "viewDetails": "View Details",
     "all": "All",
-    "askPrice": "Ask for Price"
+    "askPrice": "Ask for Price",
+    "general": "General",
+    "categories": "Categories",
+    "allCategories": "All Categories",
+    "description": "Browse our wide product range at Çadır Market."
   },
   "product": {
     "backToProducts": "Back to Products",
@@ -35,7 +53,24 @@
     "whatsapp": "WhatsApp",
     "shop": "Shop",
     "general": "General",
-    "askPrice": "Ask for Price"
+    "askPrice": "Ask for Price",
+    "notFound": "Product Not Found",
+    "whatsappMessage": "Hello, I would like to get information about {name}."
+  },
+  "search": {
+    "title": "Search Products",
+    "results": "Search Results",
+    "resultsFor": "Search Results:",
+    "metaTitle": "Search Products - Çadır Market",
+    "metaResultsTitle": "\"{searchTerm}\" Search Results - Çadır Market",
+    "metaDescription": "Search our products.",
+    "metaResultsDescription": "Search results for \"{searchTerm}\".",
+    "searchProducts": "Search Products",
+    "useSearchBar": "Use the search bar above",
+    "noResults": "No Results Found",
+    "noProductsFor": "No products found for \"{searchTerm}\"",
+    "searching": "Searching...",
+    "found": "{count} products found"
   },
   "contact": {
     "title": "Contact",
@@ -55,7 +90,8 @@
     "sending": "Sending...",
     "success": "Your message has been sent successfully! We will get back to you soon.",
     "error": "An error occurred. Please try again later or contact us via WhatsApp.",
-    "whatsappContact": "Contact via WhatsApp"
+    "whatsappContact": "Contact via WhatsApp",
+    "shop": "Shop"
   },
   "about": {
     "title": "About Us",
@@ -87,9 +123,30 @@
     "rights": "All rights reserved.",
     "distributor": "Authorized Distributor of Gema Politek"
   },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated:",
+    "introTitle": "1. Introduction",
+    "introText": "As ÇadırMarket, we value our customers' privacy. This privacy policy explains how your personal data is collected, used and protected.",
+    "dataTitle": "2. Data We Collect",
+    "dataText": "We may collect the following information:",
+    "dataName": "Name and contact information",
+    "dataEmail": "Email address",
+    "dataPhone": "Phone number",
+    "dataAddress": "Delivery address",
+    "contactTitle": "3. Contact",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email"
+  },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",
-    "tryAgain": "Try Again"
+    "tryAgain": "Try Again",
+    "previous": "Previous",
+    "next": "Next",
+    "close": "Close",
+    "previousImage": "Previous image",
+    "nextImage": "Next image"
   }
 }

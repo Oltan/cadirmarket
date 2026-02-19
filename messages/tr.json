@@ -3,25 +3,43 @@
     "home": "Ana Sayfa",
     "products": "Ürünler",
     "about": "Hakkımızda",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "searchPlaceholder": "Ürün ara..."
   },
   "home": {
     "hero": {
       "title": "Çadır ve Branda Çözümlerinde Uzman",
       "subtitle": "30 yılı aşkın tecrübemizle, endüstriyel koruma sistemlerinde profesyonel çözümler sunuyoruz",
-      "cta": "Ürünleri İncele"
+      "cta": "Ürünleri İncele",
+      "imageAlt": "Kamp yapan insanlar",
+      "contactCta": "Bize Ulaşın"
     },
-    "featured": "Öne Çıkan Ürünler"
+    "featured": "Öne Çıkan Ürünler",
+    "seeAll": "Tümünü Gör",
+    "noProducts": "Henüz ürün eklenmemiş.",
+    "goToAdmin": "Yönetim Paneline Git ve Ürün Ekle",
+    "whyUs": "Neden ÇadırMarket?",
+    "durability": "Yüksek Dayanıklılık",
+    "durabilityDesc": "Endüstriyel standartlarda, her türlü hava koşuluna dayanıklı malzeme.",
+    "shipping": "Hızlı & Güvenli Kargo",
+    "shippingDesc": "Siparişleriniz özenle paketlenir ve en kısa sürede adresinize ulaştırılır.",
+    "customSolutions": "Özel Çözümler",
+    "customSolutionsDesc": "İhtiyacınıza özel ölçülerde branda ve çadır sistemleri."
   },
   "products": {
     "title": "Tüm Ürünler",
     "found": "{count} ürün bulundu",
     "page": "Sayfa {current} / {total}",
+    "pageN": "Sayfa {n}",
     "noProducts": "Henüz ürün eklenmemiş.",
     "noCategoryProducts": "Bu kategoride ürün bulunamadı.",
     "viewDetails": "İncele",
     "all": "Tümü",
-    "askPrice": "Fiyat Sorunuz"
+    "askPrice": "Fiyat Sorunuz",
+    "general": "Genel",
+    "categories": "Kategoriler",
+    "allCategories": "Tüm Kategoriler",
+    "description": "Çadır Market'te geniş ürün yelpazemizi keşfedin."
   },
   "product": {
     "backToProducts": "Ürünlere Dön",
@@ -35,7 +53,24 @@
     "whatsapp": "WhatsApp",
     "shop": "Dükkan",
     "general": "Genel",
-    "askPrice": "Fiyat Sorunuz"
+    "askPrice": "Fiyat Sorunuz",
+    "notFound": "Ürün Bulunamadı",
+    "whatsappMessage": "Merhaba, {name} hakkında bilgi almak istiyorum."
+  },
+  "search": {
+    "title": "Ürün Ara",
+    "results": "Arama Sonuçları",
+    "resultsFor": "Arama Sonuçları:",
+    "metaTitle": "Ürün Ara - Çadır Market",
+    "metaResultsTitle": "\"{searchTerm}\" Arama Sonuçları - Çadır Market",
+    "metaDescription": "Ürünlerimiz arasında arama yapın.",
+    "metaResultsDescription": "\"{searchTerm}\" için arama sonuçları.",
+    "searchProducts": "Ürün Arayın",
+    "useSearchBar": "Arama yapmak için yukarıdaki arama çubuğunu kullanın",
+    "noResults": "Sonuç Bulunamadı",
+    "noProductsFor": "\"{searchTerm}\" için hiçbir ürün bulunamadı",
+    "searching": "Aranıyor...",
+    "found": "{count} ürün bulundu"
   },
   "contact": {
     "title": "İletişim",
@@ -55,7 +90,8 @@
     "sending": "Gönderiliyor...",
     "success": "Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.",
     "error": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya WhatsApp üzerinden bize ulaşın.",
-    "whatsappContact": "WhatsApp ile iletişime geç"
+    "whatsappContact": "WhatsApp ile iletişime geç",
+    "shop": "Dükkan"
   },
   "about": {
     "title": "Hakkımızda",
@@ -87,9 +123,30 @@
     "rights": "Tüm hakları saklıdır.",
     "distributor": "Gema Politek Yetkili Distribütörü"
   },
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "lastUpdated": "Son güncelleme:",
+    "introTitle": "1. Giriş",
+    "introText": "ÇadırMarket olarak, müşterilerimizin gizliliğine önem veriyoruz. Bu gizlilik politikası, kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır.",
+    "dataTitle": "2. Toplanan Bilgiler",
+    "dataText": "Web sitemizi ziyaret ettiğinizde aşağıdaki bilgileri toplayabiliriz:",
+    "dataName": "İsim ve iletişim bilgileri",
+    "dataEmail": "E-posta adresi",
+    "dataPhone": "Telefon numarası",
+    "dataAddress": "Teslimat adresi",
+    "contactTitle": "3. İletişim",
+    "addressLabel": "Adres",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-posta"
+  },
   "common": {
     "loading": "Yükleniyor...",
     "error": "Bir hata oluştu",
-    "tryAgain": "Tekrar Dene"
+    "tryAgain": "Tekrar Dene",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "close": "Kapat",
+    "previousImage": "Önceki görsel",
+    "nextImage": "Sonraki görsel"
   }
 }
