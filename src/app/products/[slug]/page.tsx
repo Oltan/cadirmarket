@@ -110,6 +110,14 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                 className="flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-zinc-200 text-white dark:text-black font-bold py-4 rounded-xl transition-colors"
                             >
                                 <span>0532 218 30 61</span>
+                                <span className="text-xs opacity-70">(Murat Demirel)</span>
+                            </a>
+                            <a
+                                href="tel:03123855814"
+                                className="flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-zinc-200 text-white dark:text-black font-bold py-4 rounded-xl transition-colors sm:col-span-2"
+                            >
+                                <span>0312 385 58 14</span>
+                                <span className="text-xs opacity-70">(Dükkan)</span>
                             </a>
                         </div>
                     </div>
