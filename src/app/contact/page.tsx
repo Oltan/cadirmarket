@@ -99,7 +99,7 @@ export default function ContactPage() {
                             <div>
                                 <h3 className="font-medium text-lg">E-posta</h3>
                                 <p className="text-zinc-600 dark:text-zinc-400">
-                                    info@cadirmarket.com
+                                    info@cadirmarket.org
                                 </p>
                             </div>
                         </div>
