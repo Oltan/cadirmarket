@@ -91,7 +91,7 @@ export default function PrivacyPage() {
                             <p className="text-zinc-600 dark:text-zinc-400">
                                 <strong>Adres:</strong> Ostim, Ayyıldız Sanayi Sitesi, 1125/1 Sk. No: 24 06374 Yenimahalle/Ankara<br />
                                 <strong>Telefon:</strong> 0532 218 30 61<br />
-                                <strong>E-posta:</strong> info@cadirmarket.com
+                                <strong>E-posta:</strong> info@cadirmarket.org
                             </p>
                         </div>
                     </section>
