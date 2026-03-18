@@ -88,7 +88,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="font-medium text-lg">{t('emailLabel')}</h3>
-                                <p className="text-zinc-600 dark:text-zinc-400">info@cadirmarket.com</p>
+                                <p className="text-zinc-600 dark:text-zinc-400">info@cadirmarket.org</p>
                             </div>
                         </div>
                     </div>

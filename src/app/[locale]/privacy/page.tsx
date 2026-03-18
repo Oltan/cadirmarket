@@ -40,7 +40,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
                             <p className="text-zinc-600 dark:text-zinc-400">
                                 <strong>{t('addressLabel')}:</strong> Ostim, Ayyıldız Sanayi Sitesi, 1125/1 Sk. No: 24 06374 Yenimahalle/Ankara<br />
                                 <strong>{t('phoneLabel')}:</strong> 0532 218 30 61<br />
-                                <strong>{t('emailLabel')}:</strong> info@cadirmarket.com
+                                <strong>{t('emailLabel')}:</strong> info@cadirmarket.org
                             </p>
                         </div>
                     </section>
